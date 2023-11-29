@@ -6,7 +6,9 @@
     "type": "git",
     "url": "https://github.com/card-stack/card-stack"
   },
-  "scripts": {},
+  "scripts": {
+    "preinstall": "npx -y only-allow pnpm"
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
