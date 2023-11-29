@@ -6,6 +6,7 @@
 		"type": "git",
 		"url": "https://github.com/card-stack/card-stack"
 	},
+	"packageManager": "pnpm@8.x",
 	"scripts": {
 		"preinstall": "npx -y only-allow pnpm",
 		"format": "eslint --fix --config ./.eslintrc.root.json --ext js,jsx,ts,tsx ."
