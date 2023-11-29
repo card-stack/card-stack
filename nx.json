@@ -1,95 +1,118 @@
 {
-	"$schema": "./node_modules/nx/schemas/nx-schema.json",
-	"workspaceLayout": {
-		"appsDir": "apps",
-		"libsDir": "libs"
-	},
-	"affected": {
-		"defaultBase": "origin/master"
-	},
-	"targetDefaults": {
-		"build": {
-			"cache": true,
-			"dependsOn": ["^build"],
-			"inputs": ["production", "^production"]
-		},
-		"lint": {
-			"cache": true,
-			"inputs": [
-				"default",
-				"{workspaceRoot}/.eslintrc.json",
-				"{workspaceRoot}/.eslintignore",
-				"{workspaceRoot}/eslint.config.js"
-			]
-		},
-		"e2e": {
-			"cache": true
-		},
-		"@nx/jest:jest": {
-			"cache": true,
-			"inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-			"options": {
-				"passWithNoTests": true
-			},
-			"configurations": {
-				"ci": {
-					"ci": true,
-					"codeCoverage": true
-				}
-			}
-		},
-		"@nx/eslint:lint": {
-			"cache": true,
-			"options": {
-				"errorOnUnmatchedPattern": false
-			},
-			"configurations": {
-				"ci": {
-					"format": "json-with-metadata",
-					"outputFile": "{workspaceRoot}/reports/{projectRoot}/eslint.json"
-				}
-			}
-		}
-	},
-	"generators": {
-		"@nx/next": {
-			"application": {
-				"appDir": true,
-				"e2eTestRunner": "none",
-				"style": "css",
-				"unitTestRunner": "jest",
-				"projectNameAndRootFormat": "derived",
-				"swc": true,
-				"linter": "eslint"
-			}
-		},
-		"@nx/react": {
-			"application": {
-				"babel": true
-			}
-		},
-		"@nx/js": {
-			"library": {
-				"bundler": "swc",
-				"linter": "eslint",
-				"pascalCaseFiles": true,
-				"unitTestRunner": "jest"
-			}
-		}
-	},
-	"namedInputs": {
-		"default": ["{projectRoot}/**/*", "sharedGlobals"],
-		"production": [
-			"default",
-			"!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-			"!{projectRoot}/tsconfig.spec.json",
-			"!{projectRoot}/jest.config.[jt]s",
-			"!{projectRoot}/src/test-setup.[jt]s",
-			"!{projectRoot}/test-setup.[jt]s",
-			"!{projectRoot}/.eslintrc.json",
-			"!{projectRoot}/eslint.config.js"
-		],
-		"sharedGlobals": []
-	},
-	"nxCloudAccessToken": "MGRjMWEyYjctZjU2OC00OTk0LWFlNmMtOWRhYTlmZWIzOWY3fHJlYWQ="
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
+  "affected": {
+    "defaultBase": "origin/master"
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    },
+    "e2e": {
+      "cache": true
+    },
+    "@nx/jest:jest": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ],
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "options": {
+        "errorOnUnmatchedPattern": false
+      },
+      "configurations": {
+        "ci": {
+          "format": "json-with-metadata",
+          "outputFile": "{workspaceRoot}/reports/{projectRoot}/eslint.json"
+        }
+      }
+    }
+  },
+  "generators": {
+    "@nx/next": {
+      "application": {
+        "appDir": true,
+        "e2eTestRunner": "none",
+        "style": "css",
+        "unitTestRunner": "jest",
+        "projectNameAndRootFormat": "derived",
+        "swc": true,
+        "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true
+      },
+      "library": {
+        "compiler": "swc",
+        "bundler": "rollup",
+        "linter": "eslint",
+        "pascalCaseFiles": true,
+        "unitTestRunner": "jest",
+        "publishable": true,
+        "style": "none",
+        "projectNameAndRootFormat": "derived"
+      }
+    },
+    "@nx/js": {
+      "library": {
+        "bundler": "swc",
+        "linter": "eslint",
+        "pascalCaseFiles": true,
+        "unitTestRunner": "jest",
+        "projectNameAndRootFormat": "derived"
+      }
+    }
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js"
+    ],
+    "sharedGlobals": []
+  },
+  "nxCloudAccessToken": "MGRjMWEyYjctZjU2OC00OTk0LWFlNmMtOWRhYTlmZWIzOWY3fHJlYWQ="
 }

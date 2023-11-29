@@ -6,5 +6,8 @@
 			"source.fixAll": "explicit",
 			"source.organizeImports": "never"
 		}
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	}
 }

@@ -1,8 +1,9 @@
-import { Heading } from '@card-stack/ui/components';
-
 const Index = () => {
-    return <div className="">
-        <Heading size="xl">Hello World!</Heading>
-    </div>;
+	return (
+		<div>
+			<h1>Hello World!</h1>
+		</div>
+	);
 };
+
 export default Index;

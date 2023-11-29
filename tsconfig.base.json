@@ -11,24 +11,16 @@
 		"importHelpers": true,
 		"target": "es2015",
 		"module": "esnext",
-		"lib": [
-			"es2020",
-			"dom"
-		],
+		"lib": ["es2020", "dom"],
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@card-stack/ui": [
-				"libs/ui/src/index.ts"
-			],
-			"@card-stack/ui/*": [
-				"libs/ui/src/*"
-			]
+			"@card-stack/core": ["libs/core/src/index.ts"],
+			"@card-stack/react": ["libs/react/src/index.ts"],
+			"@card-stack/ui": ["libs/ui/src/index.ts"],
+			"@card-stack/ui/*": ["libs/ui/src/*"]
 		}
 	},
-	"exclude": [
-		"node_modules",
-		"tmp"
-	]
+	"exclude": ["node_modules", "tmp"]
 }
