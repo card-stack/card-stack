@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -11,6 +15,18 @@
     },
     "e2e": {
       "cache": true
+    }
+  },
+  "generators": {
+    "@nx/next": {
+      "application": {
+        "appDir": true,
+        "e2eTestRunner": "none",
+        "style": "css",
+        "unitTestRunner": "jest",
+        "projectNameAndRootFormat": "derived",
+        "swc": true
+      }
     }
   },
   "namedInputs": {
