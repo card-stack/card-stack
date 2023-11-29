@@ -17,6 +17,7 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.1
     with:
       main-branch-name: master
+      working-directory: ${{ github.workspace}}
       number-of-agents: 3
       init-commands: |
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
