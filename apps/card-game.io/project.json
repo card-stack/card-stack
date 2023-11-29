@@ -1,61 +1,69 @@
 {
-  "name": "card-game.io",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/card-game.io",
-  "projectType": "application",
-  "targets": {
-    "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/apps/card-game.io"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "apps/card-game.io"
-        },
-        "production": {}
-      }
-    },
-    "serve": {
-      "executor": "@nx/next:server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "card-game.io:build",
-        "dev": true
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "card-game.io:build:development",
-          "dev": true
-        },
-        "production": {
-          "buildTarget": "card-game.io:build:production",
-          "dev": false
-        }
-      }
-    },
-    "export": {
-      "executor": "@nx/next:export",
-      "options": {
-        "buildTarget": "card-game.io:build:production"
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "apps/card-game.io/jest.config.ts"
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/card-game.io/**/*.{ts,tsx,js,jsx}"]
-      }
-    }
-  },
-  "tags": []
+	"name": "card-game.io",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/card-game.io",
+	"projectType": "application",
+	"targets": {
+		"build": {
+			"executor": "@nx/next:build",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"outputPath": "dist/apps/card-game.io"
+			},
+			"configurations": {
+				"development": {
+					"outputPath": "apps/card-game.io"
+				},
+				"production": {}
+			}
+		},
+		"serve": {
+			"executor": "@nx/next:server",
+			"defaultConfiguration": "development",
+			"options": {
+				"buildTarget": "card-game.io:build",
+				"dev": true
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "card-game.io:build:development",
+					"dev": true
+				},
+				"production": {
+					"buildTarget": "card-game.io:build:production",
+					"dev": false
+				}
+			}
+		},
+		"export": {
+			"executor": "@nx/next:export",
+			"options": {
+				"buildTarget": "card-game.io:build:production"
+			}
+		},
+		"test": {
+			"executor": "@nx/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "apps/card-game.io/jest.config.ts"
+			}
+		},
+		"lint": {
+			"executor": "@nx/eslint:lint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["apps/card-game.io/**/*.{ts,tsx,js,jsx}"]
+			}
+		},
+		"format": {
+			"executor": "@nx/eslint:lint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["apps/card-game.io/**/*.{ts,tsx,js,jsx}"],
+				"fix": true
+			}
+		}
+	},
+	"tags": []
 }
