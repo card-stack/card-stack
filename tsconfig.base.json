@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"rootDir": ".",
 		"sourceMap": true,
+		"jsx": "react-jsx",
 		"declaration": false,
 		"moduleResolution": "node",
 		"emitDecoratorMetadata": true,
@@ -10,11 +11,24 @@
 		"importHelpers": true,
 		"target": "es2015",
 		"module": "esnext",
-		"lib": ["es2020", "dom"],
+		"lib": [
+			"es2020",
+			"dom"
+		],
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
-		"paths": {}
+		"paths": {
+			"@card-stack/ui": [
+				"libs/ui/src/index.ts"
+			],
+			"@card-stack/ui/*": [
+				"libs/ui/src/*"
+			]
+		}
 	},
-	"exclude": ["node_modules", "tmp"]
+	"exclude": [
+		"node_modules",
+		"tmp"
+	]
 }

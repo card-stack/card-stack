@@ -67,6 +67,14 @@
 			"application": {
 				"babel": true
 			}
+		},
+		"@nx/js": {
+			"library": {
+				"bundler": "swc",
+				"linter": "eslint",
+				"pascalCaseFiles": true,
+				"unitTestRunner": "jest"
+			}
 		}
 	},
 	"namedInputs": {

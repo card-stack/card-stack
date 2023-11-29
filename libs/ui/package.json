@@ -1,0 +1,12 @@
+{
+	"name": "@card-stack/ui",
+	"version": "0.0.1",
+	"dependencies": {
+		"@swc/helpers": "~0.5.2"
+	},
+	"exports": {
+		"./tailwind.preset.js": "./src/tailwind.preset.js",
+		"./global.css": "./src/global.css",
+		"./components": "./src/components/index.ts"
+	}
+}
