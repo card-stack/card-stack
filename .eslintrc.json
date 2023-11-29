@@ -5,13 +5,43 @@
   ],
   "plugins": [
     "@nx",
-    "prettier"
+    "prettier",
+    "import"
   ],
   "extends": [
-    "plugin:prettier/recommended"
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          [
+            "builtin",
+            "external"
+          ],
+          "internal",
+          "parent",
+          [
+            "sibling",
+            "index"
+          ],
+          [
+            "object",
+            "type",
+            "unknown"
+          ]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   },
   "overrides": [
     {
@@ -45,7 +75,8 @@
         "*.tsx"
       ],
       "extends": [
-        "plugin:@nx/typescript"
+        "plugin:@nx/typescript",
+        "plugin:import/typescript"
       ],
       "rules": {}
     },
@@ -71,5 +102,8 @@
       },
       "rules": {}
     }
-  ]
+  ],
+  "settings": {
+    "import/internal-regex": "^@card-(stack|game)/"
+  }
 }
