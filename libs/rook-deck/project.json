@@ -1,0 +1,36 @@
+{
+	"name": "rook-deck",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/rook-deck/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nx/js:swc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/rook-deck",
+				"main": "libs/rook-deck/src/index.ts",
+				"tsConfig": "libs/rook-deck/tsconfig.lib.json",
+				"assets": ["libs/rook-deck/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nx/eslint:lint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": [
+					"libs/rook-deck/**/*.ts",
+					"libs/rook-deck/package.json"
+				]
+			}
+		},
+		"test": {
+			"executor": "@nx/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/rook-deck/jest.config.ts"
+			}
+		}
+	},
+	"tags": []
+}

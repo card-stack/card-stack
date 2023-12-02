@@ -19,15 +19,12 @@ if (swcJestConfig.swcrc === undefined) {
 // swcJestConfig.module.noInterop = false;
 
 export default {
-	displayName: 'core',
+	displayName: 'standard-deck',
 	preset: '../../jest.preset.js',
 	transform: {
 		'^.+\\.[tj]s$': ['@swc/jest', swcJestConfig],
 	},
 	moduleFileExtensions: ['ts', 'js', 'html'],
 	testEnvironment: 'node',
-	coverageDirectory: '../../coverage/libs/core',
-	snapshotSerializers: [
-		'./src/lib/Card.serializer.ts',
-	]
+	coverageDirectory: '../../coverage/libs/standard-deck',
 };

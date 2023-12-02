@@ -1,5 +1,6 @@
 {
 	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
 	"[javascript][javascriptreact][typescript][typescriptreact]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 		"editor.codeActionsOnSave": {
@@ -7,7 +8,7 @@
 			"source.organizeImports": "never"
 		}
 	},
-	"[javascript]": {
+	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	}
 }

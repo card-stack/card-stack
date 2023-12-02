@@ -18,6 +18,8 @@
 		"paths": {
 			"@card-stack/core": ["libs/core/src/index.ts"],
 			"@card-stack/react": ["libs/react/src/index.ts"],
+			"@card-stack/rook-deck": ["libs/rook-deck/src/index.ts"],
+			"@card-stack/standard-deck": ["libs/standard-deck/src/index.ts"],
 			"@card-stack/ui": ["libs/ui/src/index.ts"],
 			"@card-stack/ui/*": ["libs/ui/src/*"]
 		}

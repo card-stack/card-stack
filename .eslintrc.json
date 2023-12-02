@@ -1,7 +1,13 @@
 {
 	"root": true,
-	"ignorePatterns": ["**/*"],
-	"plugins": ["@nx", "prettier", "import"],
+	"ignorePatterns": [
+		"**/*"
+	],
+	"plugins": [
+		"@nx",
+		"prettier",
+		"import"
+	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:prettier/recommended",
@@ -13,11 +19,21 @@
 			"error",
 			{
 				"groups": [
-					["builtin", "external"],
+					[
+						"builtin",
+						"external"
+					],
 					"internal",
 					"parent",
-					["sibling", "index"],
-					["object", "type", "unknown"]
+					[
+						"sibling",
+						"index"
+					],
+					[
+						"object",
+						"type",
+						"unknown"
+					]
 				],
 				"newlines-between": "always",
 				"alphabetize": {
@@ -29,7 +45,12 @@
 	},
 	"overrides": [
 		{
-			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"files": [
+				"*.ts",
+				"*.tsx",
+				"*.js",
+				"*.jsx"
+			],
 			"rules": {
 				"@nx/enforce-module-boundaries": [
 					"error",
@@ -39,7 +60,9 @@
 						"depConstraints": [
 							{
 								"sourceTag": "*",
-								"onlyDependOnLibsWithTags": ["*"]
+								"onlyDependOnLibsWithTags": [
+									"*"
+								]
 							}
 						]
 					}
@@ -47,17 +70,33 @@
 			}
 		},
 		{
-			"files": ["*.ts", "*.tsx"],
-			"extends": ["plugin:@nx/typescript", "plugin:import/typescript"],
+			"files": [
+				"*.ts",
+				"*.tsx"
+			],
+			"extends": [
+				"plugin:@nx/typescript",
+				"plugin:import/typescript"
+			],
 			"rules": {}
 		},
 		{
-			"files": ["*.js", "*.jsx"],
-			"extends": ["plugin:@nx/javascript"],
+			"files": [
+				"*.js",
+				"*.jsx"
+			],
+			"extends": [
+				"plugin:@nx/javascript"
+			],
 			"rules": {}
 		},
 		{
-			"files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+			"files": [
+				"*.spec.ts",
+				"*.spec.tsx",
+				"*.spec.js",
+				"*.spec.jsx"
+			],
 			"env": {
 				"jest": true
 			},
@@ -65,6 +104,15 @@
 		}
 	],
 	"settings": {
-		"import/internal-regex": "^@card-(stack|game)/"
+		"import/internal-regex": "^@card-(stack|game)/",
+		"import/resolver": {
+			"typescript": {
+				"project": [
+					"./tsconfig.*?.json",
+					"./apps/*/tsconfig.*?.json",
+					"./libs/*/tsconfig.*?.json"
+				]
+			}
+		}
 	}
 }
